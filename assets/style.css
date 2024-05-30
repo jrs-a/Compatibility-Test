@@ -1,0 +1,505 @@
+@font-face {
+  font-family: Binggrae-r;
+  src: url(Binggrae.otf);
+}
+@font-face {
+  font-family: Binggrae-b;
+  src: url(Binggrae-Bold.otf);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* containers */
+body {
+  background-image: url("bg.jpg");
+  font-family: Binggrae-r;
+  font-size: 0.7em;
+  color: #414141;
+}
+
+/* navbar things */
+.navcont, .main-calc  {     
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#navbar, .contentarea {
+  margin: 3.5em 2.5em 1.5em 2.5em;
+  padding: 13px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8em 2em;
+
+  background-color: white;
+  font-size: 1.3em;
+  border: 1px #f2bfd7 solid;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+  #navbar > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5em 0.2em;
+  }
+  #navbar > div > .title {
+    color: inherit;
+    font-size: 1.3em;
+  }
+
+  @media only screen and (max-width: 800px) {
+    #navbar {
+      justify-content: space-around;
+    }
+  }
+  #navbar > .right > div > a,  #navbar > .right > div > #out {
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  #navbar > .right > div > a:hover {
+    color: #8d294a;
+    background-color: #eebedc;
+    opacity: 0.8;
+  } 
+  #navbar > .right > div > #out:hover, #logout:hover {
+    color: white;
+    background-color: #e96479;
+  } 
+  
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 6em;
+  margin-bottom: 6em;
+}
+
+.main-home {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 10px;
+
+  background-color: white;
+  padding: 60px 45px;
+  border-radius: 20px;
+  border: 3px #f2bfd7 solid;
+  transition: all 0.3s ease;
+}
+  .main-home:hover {
+    box-shadow: 8px 8px 29px #f2bfd7, -8px -8px 29px #f2bfd7;
+  }
+  .main-home > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+.main-prospect {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0em 3.4em;
+}
+  .formCont {
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    margin-top: 1em;
+    padding: 20px 30px;
+    border-radius: 12px;
+    background-color: white;
+  }
+    .oneRowForm {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+    }
+    .oneRowForm > div {
+      width: 32%;
+    }
+
+  .heading {
+    padding: 30px 20px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    border-radius: 12px;
+    background-color: white;
+  }
+
+  /* calculator form */
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+  .form > div {
+    width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+  }
+    .form > div:hover {
+      background-color: #f2e4ff5b;
+    }
+
+/* items */
+
+.illust {
+  display: flex;
+  justify-content: center;
+}
+  .illust > img {
+    width: 130px;
+  }
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  font-family: Binggrae-b;
+  color: #d34f73;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.nameCont {
+  display: flex;
+  gap: 10px;
+}
+  .nameCont > div{
+    width: 50%;
+  }
+
+/* form contents */
+
+label {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+input, button, #back, #submitcalc  {
+  width: 100%;
+  padding: 8px 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Binggrae-r;
+  font-size: 1.3em;
+  transition: all 0.3s ease;
+}
+/* textfields */
+input{
+  border: 1px solid #dadce0;
+}
+  input:focus {
+    background-color: #fcf0f8;
+    border: 1px solid #C060A1;
+    outline: none;
+  }
+  input:hover {
+    background-color: #fcf0f8;
+  }
+
+#back {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+.btn-normal > input, 
+.btn-alt > a > button, 
+.btn-alt > input,
+#update,
+#back, 
+#submitcalc,
+#resetcalc {
+  border-radius: 10px;
+  border: 1px solid #dadce0;
+  box-sizing: border-box;
+  font-family: Binggrae-r;
+  font-size: 1.3em;
+  transition: all 0.3s ease;
+}
+.btn-normal > input:hover, 
+.btn-alt > a > button:hover, 
+.btn-alt > input:hover,
+#update:hover,
+#back:hover {
+  color: #8d294a;
+  border-color: #EBC7E6;
+  background-color: #ffe7fa;
+  cursor: pointer;
+  opacity: 0.9;
+  box-shadow: 8px 8px 29px #FEF2FF, -8px -8px 29px #FEF2FF;
+  letter-spacing: 0.8px;
+  font-size: 1.35em;
+}
+
+#new-prospect, #submit {
+  width: 200px;
+  border: 1px solid #dadce0;
+}
+  #new-prospect:hover {
+    cursor: pointer;
+    color: #263a30;
+    border-color: #6a887a;
+    background-color: #cce8db;
+    opacity: 0.9;
+    box-shadow: 8px 8px 29px #e6f7ef, -8px -8px 29px #e6f7ef;
+  }
+  #submit:hover {
+    cursor: pointer;
+    color: #1d2e3b;
+    border-color: #5b7a92;
+    background-color: #C1D4E3;
+    opacity: 0.9;
+    box-shadow: 8px 8px 29px #ebf5fc, -8px -8px 29px #ebf5fc;
+  }
+
+/* persons table */
+
+.crushiesCont {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+.person {
+  padding: 0.4em 1em;
+  border-radius: 10px;
+  border: 2px solid white;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  font-size: 1.3em;
+
+  transition: all 0.3s ease;
+}
+  .person > span {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+  }
+    .dsp_name {
+      font-size: 1.2em;
+    }
+    .person > span > #edit, .person > span > #delete {
+      transition: all 0.3s ease;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid white;
+    }
+      .person > span > #edit:hover {
+        cursor: pointer;
+        color: #263a30;
+        border-color: #6a887a;
+        background-color: #cce8db;
+      }
+      .person > span > #delete:hover {
+        cursor: pointer;
+        color: #570303;
+        border-color: #941818;
+        background-color: #ffb5b5;
+      }
+
+  .person:hover {
+    border: 2px #fadbea solid;
+    box-shadow:  7px 7px 14px #f5d7e5,
+             -7px -7px 14px #ffe9f9;
+  }
+
+
+/* results styling */
+#profiles {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.compatResults {
+  text-align: center;
+  background-color: pink;
+  border: 1px dashed gray;
+  padding: 20px 30px;
+  border-radius: 15px;
+}
+
+.personName,
+.compatResults {
+  font-size: 23px;
+}
+.resultperson {
+  background-color: white;
+}
+
+#left {
+  text-align: right;
+  border-radius: 15px 0 0 15px;
+  padding: 7px 15px 13px 35px;
+  box-shadow: #dadce0 -5px 5px;
+  border: 1px solid #dadce0;
+}
+
+#right {
+  border-radius: 0 15px 15px 0;
+  padding: 7px 35px 13px 15px;
+  box-shadow: #dadce0 5px 5px;
+  border: 1px solid #dadce0;
+}
+
+/* errors */
+.error_txt {
+  color: red;
+}
+
+/* edit page */
+.txt_heading {
+  font-size: 2em;
+  text-align: center;
+}
+
+.main_edit {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cont_edit {
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+  padding: 50px 35px;
+  border-radius: 12px;
+  background-color: white;
+  border: 3px #f2bfd7 solid;
+  transition: all 0.3s ease;
+}
+  .cont_edit:hover {
+    box-shadow: 8px 8px 29px #f2bfd7, -8px -8px 29px #f2bfd7;
+  }
+  .cont_edit > input {
+    margin-bottom: 1em;
+  }
+
+/* calculator */
+.lvl1 {
+  margin: 4em 3.4em 1.5em 3.4em;
+}
+.lvl2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px #f2bfd7 solid;
+  border-radius: 15px;
+
+  background-color: white;
+  padding: 1.3em 0 2em 0;
+  gap: 1.5em;
+}
+  .lvl2 > .form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+  }
+    .lvl2 > .form > div {
+      padding: 1.5em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+      width: 40%;
+    }
+@media only screen and (max-width: 800px) {
+  .lvl2 {
+    gap: 1em;
+    padding: 1.2em 1em;
+  }
+    .lvl2 > .form {
+      gap: 1em;
+    }
+    .lvl2 > .form > div {
+      width: 100%;
+    }
+  .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+}
+.subtitle {
+  font-size: 1.5em;
+}
+
+.form >  div > .nameCont {
+  width: 100%;
+}
+
+.form > div > div >input {
+  font-size: 1.1em;
+}
+
+.nameCont > div > input,
+.form > div > div > input {
+  margin-top: 5px;
+}
+
+.nameCont > div > label,
+.nameCont > div > input,
+.lvl2 > .form > div > label,
+.lvl2 > .form > div > input{
+  font-size: 1.1em;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+#submitcalc, #resetcalc  {
+  /* width: 25%; */
+  width: auto;
+  padding: 0.6em 1.2em;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Binggrae-r;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+  #submitcalc:hover {
+    color: #8d2929;
+    border-color: #EBC7E6;
+    background-color: #ffe7fa;
+    cursor: pointer;
+    opacity: 0.9;
+    box-shadow: 8px 8px 29px #FEF2FF, -8px -8px 29px #FEF2FF;
+  }
+  #resetcalc:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    color: #940707;
+    background-color: #eed3d3;
+    border-color: #df9999;
+    box-shadow: 8px 8px 29px #f5e2e2, -8px -8px 29px #fdeaea;
+}
